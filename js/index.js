@@ -9,7 +9,9 @@ fetch(
   .then((response) => response.json())
   .then((datos) => printarPagina(datos));
 
-const printarPagina = () => {
+const printarPagina = (datos) => {
   const parrafo = obtenerElemento("datos-json");
   console.log(parrafo);
+  console.log(datos);
+  parrafo.textContent = `Falten ${datos.data.ibus[0]["text-ca"]}`;
 };
